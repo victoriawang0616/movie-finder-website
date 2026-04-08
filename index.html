@@ -1,86 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Finder</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFind - Movie Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">🎬 MovieFinder</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto align-items-center gap-2">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <!-- Show watchlist + logout only when logged in -->
-          <li class="nav-item" id="watchlistNav" style="display:none">
-            <a class="nav-link" href="watchlist.html">My Watchlist</a>
-          </li>
-          <li class="nav-item" id="logoutNav" style="display:none">
-            <button class="btn-outline-accent" onclick="logout()">Logout</button>
-          </li>
-          <!-- Show login/register when logged out -->
-          <li class="nav-item" id="loginNav">
-            <a href="login.html" class="btn-outline-accent">Login</a>
-          </li>
-          <li class="nav-item" id="registerNav">
-            <a href="register.html" class="btn-accent">Register</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero / Search -->
-  <div class="search-wrapper">
-    <h1>Find Your Next <span>Favourite Movie</span></h1>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-7">
-          <div class="input-group">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search a movie title...">
-            <button class="btn-accent px-4" onclick="handleSearch()">Search</button>
-          </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">CineFind</a>
+            <div id="navLinks" class="d-flex gap-3">
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- Genre Tabs -->
-  <div class="container mt-3">
-    <div class="genre-tabs">
-      <button class="genre-btn active" onclick="filterGenre(0, this)">All</button>
-      <button class="genre-btn" onclick="filterGenre(28, this)">Action</button>
-      <button class="genre-btn" onclick="filterGenre(35, this)">Comedy</button>
-      <button class="genre-btn" onclick="filterGenre(27, this)">Horror</button>
-      <button class="genre-btn" onclick="filterGenre(878, this)">Sci-Fi</button>
-      <button class="genre-btn" onclick="filterGenre(18, this)">Drama</button>
-      <button class="genre-btn" onclick="filterGenre(10749, this)">Romance</button>
-    </div>
-  </div>
+    <div class="container text-center mt-5">
+        <h1 class="display-4 fw-bold text-white">Find Your Next Favourite Movie</h1>
+        
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Search a movie title...">
+            </div>
+            <div class="col-md-2">
+                <button id="searchBtn" class="btn btn-primary btn-lg w-100">Search</button>
+            </div>
+        </div>
 
-  <!-- Movie Grid -->
-  <div class="container mt-2 mb-5">
-    <p class="section-title" id="gridLabel">Popular right now</p>
-    <div id="noResults" class="no-results" style="display:none">
-      <h4>No results found</h4>
-      <p>Try searching for a different title</p>
-    </div>
-    <div class="row g-3" id="movieGrid"></div>
-  </div>
+        <div class="mt-4">
+            <div class="btn-group flex-wrap" role="group">
+                <button class="btn btn-outline-secondary genre-filter active" data-genre="all">All</button>
+                <button class="btn btn-outline-secondary genre-filter" data-genre="28">Action</button>
+                <button class="btn btn-outline-secondary genre-filter" data-genre="35">Comedy</button>
+                <button class="btn btn-outline-secondary genre-filter" data-genre="27">Horror</button>
+                <button class="btn btn-outline-secondary genre-filter" data-genre="878">Sci-Fi</button>
+                <button class="btn btn-outline-secondary genre-filter" data-genre="18">Drama</button>
+                <button class="btn btn-outline-secondary genre-filter" data-genre="10749">Romance</button>
+            </div>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/api.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/search.js"></script>
+        <h2 class="text-white mt-5">Popular right now</h2>
+        <div id="moviesGrid" class="row mt-4">
+            <div class="col-12 text-white">Loading movies...</div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/movieService.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/watchlist.js"></script>
 </body>
 </html>
