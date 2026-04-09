@@ -124,14 +124,21 @@ function displayWatchlist() {
 
     let html = '<div class="row">';
     watchlist.forEach(movie => {
-        const posterUrl = movie.poster 
-            ? `https://image.tmdb.org/t/p/w200${movie.poster}` 
-            : 'https://via.placeholder.com/200x300?text=No+Poster';
+        let posterUrl = '';
+        if (movie.poster && movie.poster !== 'null' && movie.poster !== 'undefined') {
+            if (movie.poster.startsWith('http')) {
+                posterUrl = movie.poster;
+            } else {
+                posterUrl = `https://image.tmdb.org/t/p/w200${movie.poster}`;
+            }
+        } else {
+            posterUrl = 'https://via.placeholder.com/200x300?text=No+Poster';
+        }
         
         html += `
             <div class="col-md-3 col-sm-6 mb-4">
                 <div class="card bg-secondary text-white h-100">
-                    <img src="${posterUrl}" class="card-img-top" alt="${movie.title} poster" style="height: 300px; object-fit: cover;">
+                    <img src="${posterUrl}" class="card-img-top" alt="${movie.title} poster">
                     <div class="card-body">
                         <h5 class="card-title">${movie.title}</h5>
                         <p class="card-text"><small>${movie.year || 'N/A'}</small></p>
