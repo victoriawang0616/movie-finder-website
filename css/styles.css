@@ -171,3 +171,115 @@ body {
     padding: 50px;
     color: #cccccc;
 }
+/* =====================
+   VISUAL IMPROVEMENTS
+   ===================== */
+
+/* Smooth fade in for the whole page */
+body {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero section glow behind the title */
+.display-4 {
+    text-shadow: 0 0 40px rgba(255, 193, 7, 0.15);
+    letter-spacing: 1px;
+}
+
+/* Search bar glow on focus */
+#searchInput:focus {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.2) !important;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* Search button pulse on hover */
+.btn-primary {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* Genre buttons smoother look */
+.genre-filter {
+    border-radius: 20px !important;
+    padding: 6px 18px !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px;
+}
+
+/* Movie cards smoother shadow and animation */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 12px 35px rgba(255, 193, 7, 0.25) !important;
+}
+
+/* Gold gradient on movie title in cards */
+.card-title {
+    background: linear-gradient(90deg, #ffc107, #ffdb6d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navbar subtle bottom glow */
+.navbar {
+    box-shadow: 0 2px 20px rgba(255, 193, 7, 0.08) !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffc107;
+    border-radius: 3px;
+}
+
+/* Section title styling */
+h2.text-white {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+h2.text-white::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #ffc107;
+    border-radius: 2px;
+}
+
+/* Login and register box glow */
+.auth-box {
+    box-shadow: 0 8px 40px rgba(255, 193, 7, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.auth-box:hover {
+    box-shadow: 0 8px 40px rgba(255, 193, 7, 0.15);
+}
