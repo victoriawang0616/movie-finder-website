@@ -606,3 +606,110 @@ h2.text-white::after {
     0%   { width: 0%; }
     100% { width: 100%; }
 }
+/* =========================
+   LOGIN / REGISTER PAGE FIX
+   ========================= */
+
+.auth-wrapper {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 16px;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 520px;
+    background-color: #111111;
+    border: 1px solid #2f2f2f;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.auth-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.auth-sub {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.auth-box .form-label {
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.dark-input {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: #ffffff !important;
+}
+
+.dark-input::placeholder {
+    color: #999999 !important;
+}
+
+.dark-input:focus {
+    background-color: #1f1f1f !important;
+    border-color: #ffc107 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 0.15rem rgba(255, 193, 7, 0.18) !important;
+}
+
+/* Main buttons: always visible */
+.btn-accent {
+    background-color: #ffc107 !important;
+    color: #111111 !important;
+    border: none !important;
+    font-weight: 700 !important;
+    padding: 12px 18px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+}
+
+/* Highlight when mouse moves over */
+.btn-accent:hover {
+    background-color: #ffcd39 !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 18px rgba(255, 193, 7, 0.35) !important;
+}
+
+.btn-accent:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.35) !important;
+}
+
+.auth-switch {
+    margin-top: 18px;
+    color: #dddddd;
+}
+
+.auth-switch a {
+    color: #4da3ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Highlight link when mouse moves over */
+.auth-switch a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+/* Keep logo clear */
+.logo,
+.logo span {
+    color: #ffc107 !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
