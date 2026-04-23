@@ -11,4 +11,4 @@ We integrated the TMDB API — The Movie Database — to pull in real movie data
 
  For storing user accounts and watchlists, we used the browser's localStorage, which means everything works without a backend server. And throughout the project, we used Git and GitHub for version control and team collaboration
 
-Link to Project: http://127.0.0.1:5500/login.html
+Link to Project:[ http://127.0.0.1:5500/login.html](https://69ea625fc4ef7325ea221fb3--jolly-kheer-4e3637.netlify.app/)
